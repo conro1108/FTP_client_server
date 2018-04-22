@@ -226,17 +226,13 @@ for cmd in sys.stdin:
         port_number = ','.join([str(welcome_port // 256), str(welcome_port % 256)])
         host_port = ','.join([host_address, port_number])
 
-        #try:
-        #    welcome_socket = socket(AF_INET, SOCK_STREAM)
-        #    welcome_socket.bind(('', welcome_port))
-        #    welcome_socket.listen(1)
-        #except:
-        #    print('GET failed, FTP-data port not allocated')
-        #    continue
-
-        welcome_socket = socket(AF_INET, SOCK_STREAM)
-        welcome_socket.bind(('', welcome_port))
-        welcome_socket.listen(1)
+        try:
+            welcome_socket = socket(AF_INET, SOCK_STREAM)
+            welcome_socket.bind(('', welcome_port))
+            welcome_socket.listen(1)
+        except:
+            print('GET failed, FTP-data port not allocated')
+            continue
 
         sys.stdout.write('PORT {0}\r\n'.format(host_port))
         FTP_control.send('PORT {0}\r\n'.format(host_port).encode())
