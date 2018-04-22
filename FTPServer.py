@@ -1,3 +1,5 @@
+# Author: CONNOR ROWE, CS login: cdrowe
+
 # server creates welcoming socket to which the client connects
 # on RETR, create a connection at client's welcoming socket
 

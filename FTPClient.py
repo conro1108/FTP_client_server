@@ -1,3 +1,5 @@
+# Author: CONNOR ROWE, CS login: cdrowe
+
 # client takes command line arg of port number for welcoming socket
 # on CONNECT, attempt to create socket connection to server/port specified in cmd "FTP control"
 # FTP control is closed and a new connection is attempted on subsequent CONNECT
